@@ -1,3 +1,3 @@
-/**
- * Created by tikier on 8/4/16.
- */
+var longVariableName = 'Hello';
+longVariableName += ' world';
+document.write('<h1>' + longVariableName + '</h1>');

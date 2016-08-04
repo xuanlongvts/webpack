@@ -1,3 +1,1 @@
-/**
- * Created by tikier on 8/4/16.
- */
+document.write('<h1>Hello world</h1>');
