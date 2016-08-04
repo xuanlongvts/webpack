@@ -11,3 +11,12 @@ module.exports = {
     },
     plugins: [devFlagPlugin]
 };
+
+/*
+ # Linux & Mac
+ $ env DEBUG=true webpack-dev-server
+
+ # Windows
+ $ set DEBUG=true
+ $ webpack-dev-server
+*/
