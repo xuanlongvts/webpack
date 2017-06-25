@@ -1,0 +1,12 @@
+@import './bootstrap/customizations.scss';
+
+body{
+    width: 100%;
+    height: 100%;
+    background: url('./images/Nong_No.jpg') center center no-repeat;
+
+    p{
+        color: $brand-success;
+        border: 1px solid #000;
+    }
+}
