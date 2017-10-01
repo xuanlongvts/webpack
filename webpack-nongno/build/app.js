@@ -69,19 +69,52 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_purecss__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_purecss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_purecss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_css_main_scss__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_css_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_css_main_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style_css_header_scss__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style_css_header_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__style_css_header_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__component__ = __webpack_require__(4);
 
 
-document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_0__component__["a" /* default */])());
+
+
+
+
+
+document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_3__component__["a" /* default */])());
+
+
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+
 /* harmony default export */ __webpack_exports__["a"] = ((text = 'Hello world') => {
     const element = document.createElement('div');
   
+    element.className = 'pure-button';
     element.innerHTML = text;
   
     return element;

@@ -7,14 +7,30 @@
     "license": "MIT",
     "scripts": {
         "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
-        "build": "webpack --env production"
+        "build": "webpack --env production",
+        "lint:style": "stylelint app/**/*.scss"      
     },
     "devDependencies": {
+        "autoprefixer": "^7.1.4",
+        "css-loader": "^0.28.7",
+        "cssnano": "^3.10.0",
         "eslint": "^4.7.2",
         "eslint-loader": "^1.9.0",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "fast-sass-loader": "^1.3.0",
+        "glob": "^7.1.2",
         "html-webpack-plugin": "^2.30.1",
+        "node-sass": "^4.5.3",
         "nodemon": "^1.12.1",
+        "postcss-loader": "^2.0.6",
+        "precss": "^2.0.0",
+        "purecss": "^1.0.0",
+        "purify-css": "^1.2.5",
+        "purifycss-webpack": "^0.7.0",
+        "style-loader": "^0.18.2",
+        "stylelint": "^8.1.1",
         "webpack": "^3.6.0",
-        "webpack-dev-server": "^2.8.2"
+        "webpack-dev-server": "^2.8.2",
+        "webpack-merge": "^4.1.0"
     }
 }
