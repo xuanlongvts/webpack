@@ -1,0 +1,3 @@
+autoprefixer css-loader cssnano eslint eslint-loader extract-text-webpack-plugin fast-sass-loader file-loader glob html-webpack-plugin 
+node-sass nodemon postcss-loader precss purecss purify-css purifycss-webpack style-loader stylelint url-loader 
+webpack webpack-dev-server webpack-merge
