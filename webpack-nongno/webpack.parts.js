@@ -1,5 +1,11 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BabelWebpackPlugin = require('babel-minify-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.devServer = ({ host, port }) => ({
     devServer: {
@@ -81,7 +87,7 @@ exports.POST_CSS = ({ include, exclude } = {}) => ({
     },
 });
 
-exports.EXTRACT_CSS = ({ include, exclude, use }) => {
+exports.EXTRACT_CSS = ({ include, exclude, use, path }) => {
     // Output extracted CSS to a file
     const plugin = new ExtractTextPlugin({
         filename: '[name].css',
@@ -153,4 +159,84 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
             },
         ],
     },
+});
+
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+    module: {
+        rules: [
+            {
+                // Capture eot, ttf, woff, and woff2
+                test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                include,
+                exclude,
+                use: {
+                    loader: 'file-loader',
+                    options,
+                },
+            },
+        ],
+    },
+});
+
+exports.loadJavaScript = ({ include, exclude }) => ({
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                include,
+                exclude,
+                loader: 'babel-loader',
+                options: {
+                    // Enable caching for improved performance during development.
+                    // It uses default OS directory by default. If you need
+                    // something more custom, pass a path to it.
+                    // I.e., { cacheDirectory: '<path>' }
+                    cacheDirectory: true,
+                },
+            },
+        ],
+    },
+});
+
+exports.generateSourceMaps = ({ type }) => ({
+    devtool: type,
+});
+
+exports.extractBundles = (bundles) => ({
+    plugins: bundles.map((bundle) => (
+        new webpack.optimize.CommonsChunkPlugin(bundle)
+    )),
+});
+
+exports.clean = (path) => ({
+    plugins: [
+        new CleanWebpackPlugin([path]),
+    ],
+});
+
+exports.minifyJavaScript = () => ({
+    plugins: [
+        new BabelWebpackPlugin(),
+    ],
+});
+
+exports.minifyCSS = ({ options }) => ({
+    plugins: [
+        new OptimizeCSSAssetsPlugin({
+            cssProcessor: cssnano,
+            cssProcessorOptions: options,
+            canPrint: false,
+        }),
+    ],
+});
+
+exports.minifyHTML = () => ({
+    plugins: [
+        new HtmlWebpackPlugin({
+            minify: {
+                collapseWhitespace: true,
+            },
+            hash: true,
+        }),
+    ],
 });

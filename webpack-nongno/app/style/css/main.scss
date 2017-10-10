@@ -1,9 +1,19 @@
 
+@font-face {
+    font-family: 'myFont';
+    src: url('./../fonts/glyphicons-halflings-regular.woff');
+}
+
 body { 
-    background: #aaa url('../images/Nong_No.jpg') no-repeat left top;
+    background: #aaa url('./../images/Nong_No.jpg') no-repeat right top;
+    font-family: 'myFont'
 }
 
 .pure-button {
     background: #000;
     color: #fff;
+}
+
+.btn{
+    margin: 20px;
 }
