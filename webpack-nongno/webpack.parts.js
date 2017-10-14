@@ -87,10 +87,10 @@ exports.POST_CSS = ({ include, exclude } = {}) => ({
     },
 });
 
-exports.EXTRACT_CSS = ({ include, exclude, use, path }) => {
+exports.EXTRACT_CSS = ({ include, exclude, use }) => {
     // Output extracted CSS to a file
     const plugin = new ExtractTextPlugin({
-        filename: '[name].css',
+        filename: 'css/[name].css',
     });
 
     return {
@@ -103,6 +103,7 @@ exports.EXTRACT_CSS = ({ include, exclude, use, path }) => {
                     use: plugin.extract({
                         use,
                         fallback: 'style-loader',
+                        publicPath: '../',
                     }),
                 },
             ],

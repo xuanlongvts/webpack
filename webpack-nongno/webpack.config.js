@@ -7,7 +7,7 @@ const glob = require('glob');
 const parts = require('./webpack.parts');
 
 const PATHS = {
-    app: path.join(__dirname, 'app'),
+    app: path.join(__dirname, 'asset'),
     build: path.join(__dirname, 'build'),
 };
 
@@ -43,7 +43,7 @@ const productionConfig = merge([
         },
         output: {
             path: PATHS.build,
-            filename: 'app/js/[name].js',
+            filename: 'js/[name].js',
         },
     },
 
