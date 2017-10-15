@@ -7,7 +7,7 @@ const glob = require('glob');
 const parts = require('./webpack.parts');
 
 const PATHS = {
-    app: path.join(__dirname, 'asset'),
+    app: path.join(__dirname, 'app'),
     build: path.join(__dirname, 'build'),
 };
 
